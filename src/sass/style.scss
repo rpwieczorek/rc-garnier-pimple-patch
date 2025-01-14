@@ -1,0 +1,736 @@
+@charset "UTF-8";
+//https://www.figma.com/design/x7j6vdBTN4GbqWavsEPTf8/Garnier-Pimple-Patches-RC?node-id=2001-78&t=H4EtFcAumyZUBGfB-0
+//http://localhost:3000/
+$regular: 'Montserrat', sans-serif;
+
+$blue: #13294b;
+$white: #ffffff;
+$text: #13294b;
+$bgcolor: #F4FBFB;
+$turkus: #469B92;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin text {
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+@mixin img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+#es-garnier.es-garnier {
+  font-family: $regular;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.2;
+  max-width: 998px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  color: $text;
+  background: $bgcolor;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: $regular;
+  }
+  .es-kv {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 350px;
+    background-image: url("../images/bg-dots-1.png");
+    background-size: contain;
+    background-position: top 0 right 0;
+    background-repeat: no-repeat;
+    &__title {
+      background-color: rgba(70,155,146,0.8);
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: auto;
+      @include text;
+      color: $white;
+      padding: 15px;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 700;
+      z-index: 4;
+    }
+    &__photo {
+      position: absolute;
+      top: 0;
+      left: -13px;
+      width: 60%;
+      height: 100%;
+      z-index: 2;
+      animation: slideright 1s ease forwards;
+    }
+    &__photoimg {
+      height: 100%;
+    }
+
+    &__logo {
+      position: absolute;
+      top: 90px;
+      right: 0;
+      width: 40%;
+      animation: slideleft 1s ease forwards;
+      z-index: 3;
+    }
+    &__packshot {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 40%;
+      animation: slideleft 1s ease forwards;
+      &--photo {
+        @include img;
+       // width: 100px;
+        max-height: 410px;
+        padding-top: 50px;
+      }
+    }
+    &__img {
+      max-width: 100%;
+      display: block;
+      margin: 0 0 0 auto;
+      max-height: 100px;
+    }
+
+
+  }
+
+  .es-benefits {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    &__title {
+      width: 100%;
+      background-image: url("../images/stripe-gradient.png");
+      background-size: cover;
+      @include text;
+      padding: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $white;
+      font-weight: 700;
+      font-size: 25px;
+    }
+    &__wrapper {
+      margin: 32px auto;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    &__item {
+      margin: 0 auto;
+      min-width: 250px;
+      max-width: 314px;
+      padding: 10px 20px;
+      text-align: center;
+      &:hover {
+        transition: all 0.3s;
+        .es-benefits__img {
+          animation: pulse 1s infinite;
+          
+        }
+        .es-benefits__text {
+          transform: scale(1.1);
+        }
+      }
+    }
+    &__img {
+      @include text;
+      width: 32px;
+      transition: all 0.3s;
+    }
+    &__text {
+      @include text;
+      color: $text;
+      font-size: 16px;
+      font-weight: 400;
+      transition: all 0.3s;
+    }
+    &__bold {
+      font-weight: 700;
+    }
+  }
+
+  .es-ba {
+    width: 100%;
+    &__wrapper {
+      width: 100%;
+      &:hover {
+        .es-ba__subtitle {
+          justify-content: space-around;
+        }
+      }
+    }
+    &__img {
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+      max-height: 550px;
+      object-fit: cover;
+    }
+    &__subtitle {
+      width: 100%;
+      background-image: url("../images/stripe-gradient.png");
+      background-size: cover;
+      display: flex;
+      justify-content: space-between;
+    }
+    &__text {
+      @include text;
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      color: $white;
+      text-transform: uppercase;
+      padding: 10px 30px;
+    }
+  }
+
+  .es-effects {
+    width: 100%;
+    margin: 32px auto;
+    &__wrapper {
+      width: 100%;
+      background-image: url("../images/bg-dots-1.png");
+      background-size: contain;
+      background-position: top 0 right -30%;
+      background-repeat: no-repeat;
+    }
+    &__title {
+      @include text;
+      padding: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $text;
+      font-weight: 700;
+      font-size: 25px;
+    }
+    &__img {
+      @include img;
+      &--small {
+        display: block;
+      }
+      &--big {
+        display: none;
+      }
+    }
+    &__text {
+      @include text;
+      margin: 32px auto;
+      padding: 0 10%;
+      color: $text;
+      font-size: 16px;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+
+  .es-sizes {
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    &__wrapper {
+      width: 100%;
+      max-height: 550px;
+      overflow: hidden;
+      &:hover {
+        .es-sizes__size {
+          animation: pulse 1s infinite;
+        }
+      }
+    }
+    &__size {
+      @include text;
+      font-size: 16px;
+      font-weight: 500;
+      position: absolute;
+      display: block;
+      transition: 1s all;
+      &--10 {
+        top: 24%;
+        left: 25%;
+      }
+      &--12 {
+        top:26%;
+        right: 26%;
+      }
+    }
+    &__title {
+      @include text;
+      padding: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $text;
+      font-weight: 700;
+      font-size: 25px;
+    }
+    &__subtitle {
+      @include text;
+      padding: 0 15px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $text;
+      font-weight: 400;
+      font-size: 18px;
+    }
+    &__img {
+      width: 100%;
+      margin: 0 auto;
+      display: block;
+      
+     // object-fit: cover;
+    }
+    &__text {
+      width: 100%;
+      background-image: url("../images/stripe-gradient.png");
+      background-size: cover;
+      @include text;
+      padding: 20px;
+      text-align: center;
+      text-transform: none;
+      color: $white;
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+
+  .es-slider {
+    margin: 32px 0 0;
+    padding-bottom: 64px;
+    &:hover {
+      .es-slider__ampm {
+        animation: pulse2 2s infinite;
+      }
+    }
+    &__title {
+      @include text;
+      padding: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $text;
+      font-weight: 700;
+      font-size: 25px;
+    }
+    &__wrapper {
+      padding: 0 16px;
+    }
+    &__content {
+      max-width: 100%;
+      padding: 16px 28px;
+      position: relative;
+    }
+    &__img {
+      @include img;    
+      padding-top: 15px;  
+    }
+    &__slide {
+      width: 100%;
+    }
+    &__imgbut {
+      margin: 0 auto;
+      width: fit-content;
+      position: relative;
+    }
+    &__ampm {
+      width: 140px;
+      position: absolute;
+      top: 5px;
+      right: 22px;
+    }
+    &__button {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 286px;
+      background-image: url("../images/stripe-gradient.png");
+      background-size: cover;
+      @include text;
+      padding: 20px;
+      text-align: center;
+      text-transform: none;
+      color: $white;
+      font-weight: 700;
+      font-size: 25px;
+    }
+    &__text {
+      @include text;
+      padding: 52px 15px 15px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+    }
+    .swiper-button-prev:after,
+    .swiper-container-rtl .swiper-button-next:after {
+      display: none;
+    }
+    .swiper-button-next:after,
+    .swiper-container-rtl .swiper-button-prev:after {
+      display: none;
+    }
+    .swiper-button-next,
+    .swiper-container-rtl .swiper-button-prev {
+      right: -1%;
+    }
+    .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-next {
+      left: -1%;
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background-color: $turkus;
+  }
+
+  .es-cross {
+    margin: 0 auto;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(244,251,251,1) 0%, rgba(244,251,251,1) 59%, rgba(220,244,243,1) 59%, rgba(220,244,243,1) 100%);;
+    &__wrapper {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 15px;
+      position: relative;
+    }
+    &__title {
+      @include text;
+      padding: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $text;
+      font-weight: 700;
+      font-size: 25px;
+    }
+    &__img {
+      @include img;
+    }
+    &__circle{
+      cursor: pointer;
+      position: absolute;
+      bottom: 0;
+      &--1 {
+       left: 16%; 
+      }
+      &--2 {
+        left: 31%; 
+      }
+      &--3 {
+        left: 45%; 
+      } 
+      &--4 {
+        left: 69%; 
+      }  
+    }
+    &__product {
+      @include text;
+      padding: 30px 15px 15px;
+      font-weight: 700;
+      color: #469B92;
+      text-align: center;
+    }
+    &__button {
+      @include text;
+      width: 302px;
+      margin: auto;
+      padding: 12px;
+      border-radius: 0;
+      border: 1px solid #000;
+      color: #fff;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 700;
+      background: #000000;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: block;
+      transition: all 0.5s;
+      &:hover {
+        background: $bgcolor;
+        border-radius: 15px;
+        color: #000;
+        border: 1px solid #000;
+      }
+    }
+    &__disclaimer {
+      @include text;
+      font-size: 11px;
+      font-weight: 400;
+      text-align: center;
+      padding: 20px 15px;
+    }
+  }
+
+  .es-logo {
+    margin: 0 auto;
+    width: 100%;
+    background-color: $white;
+    &__img {
+      @include img;
+      width: 50%;
+      min-width: 250px;
+      transition: 0.5s all;
+      &:hover {
+        transform: scale(1.1);
+      }
+
+    }
+  }
+
+  .es-logos {
+    margin: 0 auto;
+    padding: 30px 15px;
+    width: 100%;
+    background-image: url("../images/bg-green-stripe.png");
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    &__img {
+      @include img;
+      width: 200px;
+      display: block;
+      transition: 0.5s all;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  @media screen and (min-width: 415px) {
+    .es-kv {
+      min-height: 400px;
+      &__photo {
+        left: -33px;
+      }
+    }
+  }
+  @media screen and (min-width: 500px) {
+    .es-kv {
+      min-height: 450px;
+      &__photo {
+        left: -33px;
+      }
+    }
+    .es__size {
+      &--10 {
+        top: 20%;
+        left: 25%;
+      }
+      &--12 {
+        top:22%;
+        right: 26%;
+      }
+    }
+    .es-slider {
+      .swiper-button-next,
+      .swiper-container-rtl .swiper-button-prev {
+        right: 10%;
+      }
+      .swiper-button-prev,
+      .swiper-container-rtl .swiper-button-next {
+        left: 10%;
+      }
+    }
+    .es-cross {
+      &__title {
+        padding: 20px 20px 35px;
+      }
+      &__wrapper {
+        padding: 0 15%;
+      }
+      &__circle{
+        bottom: 2%;
+        &--1 {
+         left: 25%; 
+        }
+        &--2 {
+          left: 37%; 
+        }
+        &--3 {
+          left: 46%; 
+        } 
+        &--4 {
+          left: 64%; 
+        }  
+      }
+    }
+
+  }
+  @media screen and (min-width: 600px) {
+    .es-kv {
+      min-height: 550px;
+      &__photo {
+        left: -15px;
+      }
+      &__title {
+        font-size: 25px;
+      }
+      &__logo {
+        top: 100px;
+      }
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .es-kv {
+      min-height: 600px;
+      background-size: 52%;
+    background-position: top -55px right 0;
+      &__photo {
+        left: 0;
+      }
+    }
+    .es-effects {
+      &__wrapper {
+        background-position: top 0 right 0;
+      }
+      &__img {
+        &--small {
+          display: none;
+        }
+        &--big {
+          display: block;
+        }
+      }
+    }
+    .es-slider {
+      .swiper-button-next,
+      .swiper-container-rtl .swiper-button-prev {
+        right: 21%;
+      }
+      .swiper-button-prev,
+      .swiper-container-rtl .swiper-button-next {
+        left: 18%;
+      }
+    }
+    .es-cross {
+      &__circle{
+        bottom: 4%;
+        &--1 {
+         left: 25%; 
+        }
+        &--2 {
+          left: 38%; 
+        }
+        &--3 {
+          left: 47%; 
+        } 
+        &--4 {
+          left: 65%; 
+        }  
+      }
+    }
+  }
+  @media screen and (min-width: 998px) {
+    .es-cross {
+      &__circle{
+        bottom: 4%;
+        &--1 {
+         left: 25%; 
+        }
+        &--2 {
+          left: 38%; 
+        }
+        &--3 {
+          left: 47%; 
+        } 
+        &--4 {
+          left: 65%; 
+        }  
+      }
+    }
+
+
+
+
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pulse2 {
+  0% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes slidedown {
+  from {
+    opacity: 0;
+    transform: translateY(-32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideright {
+  from {
+    opacity: 0.3;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideleft {
+  from {
+    opacity: 0.3;
+    transform: translateX(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
